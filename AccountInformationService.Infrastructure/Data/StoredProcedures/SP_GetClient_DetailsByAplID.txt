@@ -1,0 +1,27 @@
+USE [AM]
+GO
+
+/****** Object:  StoredProcedure [dbo].[SP_GetClient_DetailsByAplID]    Script Date: 28/01/2022 19:10:26 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[SP_GetClient_DetailsByAplID]
+@AplID NVARCHAR(100)
+AS
+BEGIN
+SELECT [ClientID]
+      ,[FirstName]
+      ,[LastName]
+      ,[Address]
+      ,[Email]
+      ,[Phone]
+      ,[ClientType]
+      ,[UserID]
+  FROM [dbo].[Client_Detail] WHERE UserID = @AplID
+END
+GO
+
+
